@@ -1,0 +1,7 @@
+数据集 https://pan.baidu.com/s/1Ou4bsZkCxo6nuJ1T6Mq_HQ   提取码：rja0
+
+d:
+cd cd D:\CV_teach\3segmentation\Image-segmentation
+conda activate pytorch1.8
+python main.py    #训练
+python test.py     #测试
