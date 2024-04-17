@@ -1,0 +1,48 @@
+请自己用手机录制一段3~5分钟的视频（保存未test.mp4格式），建议人不太多的场景下录制。
+请替换demo.py代码第10行中的“MOT16-07-raw.webm”
+
+步骤1-找到代码路径：cd D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort
+步骤2-进入实验2相同的环境：conda activate pytorch1.9
+步骤3-运行跟踪程序：python demo.py
+
+
+---------------------运行前，请下载YOLOV5的weights文件，放到weights目录中----------------
+https://github.com/ultralytics/yolov5?tab=readme-ov-file
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5m.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5l.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5x.pt
+
+===============================================================================
+问题1（如果遇到，请按下方法解决）：：TypeError: load() missing 1 required positional argument: 'Loader'
+
+(pytorch1.8) D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort2>python demo.py
+Traceback (most recent call last):
+  File "demo.py", line 1, in <module>
+    from AIDetector_pytorch import Detector
+  File "D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort2\AIDetector_pytorch.py", line 5, in <module>
+    from utils.BaseDetector import baseDet
+  File "D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort2\utils\BaseDetector.py", line 1, in <module>
+    from tracker import update_tracker
+  File "D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort2\tracker.py", line 8, in <module>
+    cfg.merge_from_file("deep_sort/configs/deep_sort.yaml")
+  File "D:\CV_teach\CV_Experment\exp4_tracking_code\Yolov5-Deepsort2\deep_sort\utils\parser.py", line 23, in merge_from_file
+    self.update(yaml.load(fo.read()))
+TypeError: load() missing 1 required positional argument: 'Loader'
+
+解决办法：
+https://blog.csdn.net/weixin_43915090/article/details/136147857
+
+有三种解决办法（三选一即可）：
+d1=yaml.load(file,Loader=yaml.FullLoader)
+d1=yaml.safe_load(file)
+d1=yaml.load(file, Loader=yaml.CLoader)
+
+===============================================================================
+问题2（如果遇到，请按下方法解决）：AttributeError: module 'numpy' has no attribute 'float'.
+解决办法：降低numpy 版本
+pip uninstall numpy
+pip install numpy==1.23.5
+
+
+

@@ -1,0 +1,7 @@
+---------------------运行前，请下载YOLOV5的weights文件，放到weights目录中----------------
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5m.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5l.pt
+https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5x.pt
+
+
